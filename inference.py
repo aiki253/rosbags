@@ -19,9 +19,13 @@ class Model:
 
 if __name__ == "__main__":
     import random
+
     from dataset import RosbagDataset, load_rosbag_data
 
-    scan_df, synchronized_joy_df = load_rosbag_data()
+    bag_path = (
+        "../dataset/rosbag2_2025_10_08-15_15_28/rosbag2_2025_10_08-15_15_28_0.db3"
+    )
+    scan_df, synchronized_joy_df = load_rosbag_data(bag_path)
     dataset = RosbagDataset(scan_df, synchronized_joy_df)
 
     num_samples = 10
