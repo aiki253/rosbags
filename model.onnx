@@ -1,0 +1,583 @@
+
+pytorch2.9.0+cu128:Òπ
+ù
+x
+val_0	unsqueezenode_unsqueeze"	UnsqueezeJF
+	namespace9: __main__.TinyLidarNet/unsqueeze: aten.unsqueeze.defaultJU
+pkg.torch.onnx.class_hierarchy3['__main__.TinyLidarNet', 'aten.unsqueeze.default']Jä
+pkg.torch.onnx.fx_nodep%unsqueeze : [num_users=1] = call_function[target=torch.ops.aten.unsqueeze.default](args = (%x, 1), kwargs = {})J/
+pkg.torch.onnx.name_scopes['', 'unsqueeze']Jç
+pkg.torch.onnx.stack_traceoFile "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 40, in forward
+    x = x.unsqueeze(1)
+¡
+	unsqueeze
+conv1.weight
+
+conv1.biasconv1dnode_conv1d"Conv*
+group†*
+pads@@†*
+auto_pad"NOTSET†*
+strides@†*
+	dilations@†Jd
+	namespaceW: __main__.TinyLidarNet/conv1: torch.nn.modules.conv.Conv1d/conv1d: aten.conv1d.defaultJr
+pkg.torch.onnx.class_hierarchyP['__main__.TinyLidarNet', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J¥
+pkg.torch.onnx.fx_nodeô%conv1d : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%unsqueeze, %p_conv1_weight, %p_conv1_bias, [2], [2]), kwargs = {})J5
+pkg.torch.onnx.name_scopes['', 'conv1', 'conv1d']J‡
+pkg.torch.onnx.stack_trace¡File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 41, in forward
+    x = self.relu(self.conv1(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+è
+conv1drelu	node_relu"ReluJc
+	namespaceV: __main__.TinyLidarNet/relu: torch.nn.modules.activation.ReLU/relu: aten.relu.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÉ
+pkg.torch.onnx.fx_nodei%relu : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%conv1d,), kwargs = {})J2
+pkg.torch.onnx.name_scopes['', 'relu', 'relu']Jÿ
+pkg.torch.onnx.stack_traceπFile "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 41, in forward
+    x = self.relu(self.conv1(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 144, in forward
+    return F.relu(input, inplace=self.inplace)
+¡
+relu
+conv2.weight
+
+conv2.biasconv1d_1node_conv1d_1"Conv*
+group†*
+pads@@†*
+auto_pad"NOTSET†*
+strides@†*
+	dilations@†Jf
+	namespaceY: __main__.TinyLidarNet/conv2: torch.nn.modules.conv.Conv1d/conv1d_1: aten.conv1d.defaultJr
+pkg.torch.onnx.class_hierarchyP['__main__.TinyLidarNet', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J±
+pkg.torch.onnx.fx_nodeñ%conv1d_1 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%relu, %p_conv2_weight, %p_conv2_bias, [2], [2]), kwargs = {})J7
+pkg.torch.onnx.name_scopes['', 'conv2', 'conv1d_1']J‡
+pkg.torch.onnx.stack_trace¡File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 42, in forward
+    x = self.relu(self.conv2(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+ù
+conv1d_1relu_1node_relu_1"ReluJe
+	namespaceX: __main__.TinyLidarNet/relu: torch.nn.modules.activation.ReLU/relu_1: aten.relu.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_1 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%conv1d_1,), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'relu', 'relu_1']Jÿ
+pkg.torch.onnx.stack_traceπFile "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 42, in forward
+    x = self.relu(self.conv2(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 144, in forward
+    return F.relu(input, inplace=self.inplace)
+≈
+relu_1
+conv3.weight
+
+conv3.biasconv1d_2node_conv1d_2"Conv*
+group†*
+pads@@†*
+auto_pad"NOTSET†*
+strides@†*
+	dilations@†Jf
+	namespaceY: __main__.TinyLidarNet/conv3: torch.nn.modules.conv.Conv1d/conv1d_2: aten.conv1d.defaultJr
+pkg.torch.onnx.class_hierarchyP['__main__.TinyLidarNet', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J≥
+pkg.torch.onnx.fx_nodeò%conv1d_2 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%relu_1, %p_conv3_weight, %p_conv3_bias, [2], [2]), kwargs = {})J7
+pkg.torch.onnx.name_scopes['', 'conv3', 'conv1d_2']J‡
+pkg.torch.onnx.stack_trace¡File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 43, in forward
+    x = self.relu(self.conv3(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+ù
+conv1d_2relu_2node_relu_2"ReluJe
+	namespaceX: __main__.TinyLidarNet/relu: torch.nn.modules.activation.ReLU/relu_2: aten.relu.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_2 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%conv1d_2,), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'relu', 'relu_2']Jÿ
+pkg.torch.onnx.stack_traceπFile "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 43, in forward
+    x = self.relu(self.conv3(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 144, in forward
+    return F.relu(input, inplace=self.inplace)
+≈
+relu_2
+conv4.weight
+
+conv4.biasconv1d_3node_conv1d_3"Conv*
+group†*
+pads@@†*
+auto_pad"NOTSET†*
+strides@†*
+	dilations@†Jf
+	namespaceY: __main__.TinyLidarNet/conv4: torch.nn.modules.conv.Conv1d/conv1d_3: aten.conv1d.defaultJr
+pkg.torch.onnx.class_hierarchyP['__main__.TinyLidarNet', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J≥
+pkg.torch.onnx.fx_nodeò%conv1d_3 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%relu_2, %p_conv4_weight, %p_conv4_bias, [1], [1]), kwargs = {})J7
+pkg.torch.onnx.name_scopes['', 'conv4', 'conv1d_3']J‡
+pkg.torch.onnx.stack_trace¡File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 44, in forward
+    x = self.relu(self.conv4(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+ù
+conv1d_3relu_3node_relu_3"ReluJe
+	namespaceX: __main__.TinyLidarNet/relu: torch.nn.modules.activation.ReLU/relu_3: aten.relu.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_3 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%conv1d_3,), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'relu', 'relu_3']Jÿ
+pkg.torch.onnx.stack_traceπFile "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 44, in forward
+    x = self.relu(self.conv4(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 144, in forward
+    return F.relu(input, inplace=self.inplace)
+≈
+relu_3
+conv5.weight
+
+conv5.biasconv1d_4node_conv1d_4"Conv*
+group†*
+pads@@†*
+auto_pad"NOTSET†*
+strides@†*
+	dilations@†Jf
+	namespaceY: __main__.TinyLidarNet/conv5: torch.nn.modules.conv.Conv1d/conv1d_4: aten.conv1d.defaultJr
+pkg.torch.onnx.class_hierarchyP['__main__.TinyLidarNet', 'torch.nn.modules.conv.Conv1d', 'aten.conv1d.default']J≥
+pkg.torch.onnx.fx_nodeò%conv1d_4 : [num_users=1] = call_function[target=torch.ops.aten.conv1d.default](args = (%relu_3, %p_conv5_weight, %p_conv5_bias, [1], [1]), kwargs = {})J7
+pkg.torch.onnx.name_scopes['', 'conv5', 'conv1d_4']J‡
+pkg.torch.onnx.stack_trace¡File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 45, in forward
+    x = self.relu(self.conv5(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+ù
+conv1d_4relu_4node_relu_4"ReluJe
+	namespaceX: __main__.TinyLidarNet/relu: torch.nn.modules.activation.ReLU/relu_4: aten.relu.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_4 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%conv1d_4,), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'relu', 'relu_4']Jÿ
+pkg.torch.onnx.stack_traceπFile "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 45, in forward
+    x = self.relu(self.conv5(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 144, in forward
+    return F.relu(input, inplace=self.inplace)
+ï
+relu_4
+val_4view	node_view"Reshape*
+	allowzero†J<
+	namespace/: __main__.TinyLidarNet/view: aten.view.defaultJP
+pkg.torch.onnx.class_hierarchy.['__main__.TinyLidarNet', 'aten.view.default']Jç
+pkg.torch.onnx.fx_nodes%view : [num_users=1] = call_function[target=torch.ops.aten.view.default](args = (%relu_4, [1, 8704]), kwargs = {})J*
+pkg.torch.onnx.name_scopes['', 'view']Jã
+pkg.torch.onnx.stack_tracemFile "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 46, in forward
+    x = x.flatten(1)
+Ñ
+view
+
+fc1.weight
+fc1.biaslinearnode_linear"Gemm*
+beta  Ä?†*
+transB†*
+alpha  Ä?†*
+transA †Jd
+	namespaceW: __main__.TinyLidarNet/fc1: torch.nn.modules.linear.Linear/linear: aten.linear.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J°
+pkg.torch.onnx.fx_nodeÜ%linear : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%view, %p_fc1_weight, %p_fc1_bias), kwargs = {})J3
+pkg.torch.onnx.name_scopes['', 'fc1', 'linear']J÷
+pkg.torch.onnx.stack_trace∑File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 47, in forward
+    x = self.relu(self.fc1(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+ó
+linearrelu_5node_relu_5"ReluJe
+	namespaceX: __main__.TinyLidarNet/relu: torch.nn.modules.activation.ReLU/relu_5: aten.relu.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']JÖ
+pkg.torch.onnx.fx_nodek%relu_5 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear,), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'relu', 'relu_5']J÷
+pkg.torch.onnx.stack_trace∑File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 47, in forward
+    x = self.relu(self.fc1(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 144, in forward
+    return F.relu(input, inplace=self.inplace)
+í
+relu_5
+
+fc2.weight
+fc2.biaslinear_1node_linear_1"Gemm*
+beta  Ä?†*
+transB†*
+alpha  Ä?†*
+transA †Jf
+	namespaceY: __main__.TinyLidarNet/fc2: torch.nn.modules.linear.Linear/linear_1: aten.linear.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J•
+pkg.torch.onnx.fx_nodeä%linear_1 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%relu_5, %p_fc2_weight, %p_fc2_bias), kwargs = {})J5
+pkg.torch.onnx.name_scopes['', 'fc2', 'linear_1']J÷
+pkg.torch.onnx.stack_trace∑File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 48, in forward
+    x = self.relu(self.fc2(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+õ
+linear_1relu_6node_relu_6"ReluJe
+	namespaceX: __main__.TinyLidarNet/relu: torch.nn.modules.activation.ReLU/relu_6: aten.relu.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_6 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear_1,), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'relu', 'relu_6']J÷
+pkg.torch.onnx.stack_trace∑File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 48, in forward
+    x = self.relu(self.fc2(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 144, in forward
+    return F.relu(input, inplace=self.inplace)
+í
+relu_6
+
+fc3.weight
+fc3.biaslinear_2node_linear_2"Gemm*
+beta  Ä?†*
+transB†*
+alpha  Ä?†*
+transA †Jf
+	namespaceY: __main__.TinyLidarNet/fc3: torch.nn.modules.linear.Linear/linear_2: aten.linear.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J•
+pkg.torch.onnx.fx_nodeä%linear_2 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%relu_6, %p_fc3_weight, %p_fc3_bias), kwargs = {})J5
+pkg.torch.onnx.name_scopes['', 'fc3', 'linear_2']J÷
+pkg.torch.onnx.stack_trace∑File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 49, in forward
+    x = self.relu(self.fc3(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+õ
+linear_2relu_7node_relu_7"ReluJe
+	namespaceX: __main__.TinyLidarNet/relu: torch.nn.modules.activation.ReLU/relu_7: aten.relu.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.activation.ReLU', 'aten.relu.default']Já
+pkg.torch.onnx.fx_nodem%relu_7 : [num_users=1] = call_function[target=torch.ops.aten.relu.default](args = (%linear_2,), kwargs = {})J4
+pkg.torch.onnx.name_scopes['', 'relu', 'relu_7']J÷
+pkg.torch.onnx.stack_trace∑File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 49, in forward
+    x = self.relu(self.fc3(x))
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 144, in forward
+    return F.relu(input, inplace=self.inplace)
+ä
+relu_7
+
+fc4.weight
+fc4.biaslinear_3node_linear_3"Gemm*
+beta  Ä?†*
+transB†*
+alpha  Ä?†*
+transA †Jf
+	namespaceY: __main__.TinyLidarNet/fc4: torch.nn.modules.linear.Linear/linear_3: aten.linear.defaultJt
+pkg.torch.onnx.class_hierarchyR['__main__.TinyLidarNet', 'torch.nn.modules.linear.Linear', 'aten.linear.default']J•
+pkg.torch.onnx.fx_nodeä%linear_3 : [num_users=1] = call_function[target=torch.ops.aten.linear.default](args = (%relu_7, %p_fc4_weight, %p_fc4_bias), kwargs = {})J5
+pkg.torch.onnx.name_scopes['', 'fc4', 'linear_3']JŒ
+pkg.torch.onnx.stack_traceØFile "/home/katsuoka.teruyuki/scripts_a05/magp_251101/src/model.py", line 50, in forward
+    return self.fc4(x)
+  File "/home/katsuoka.teruyuki/scripts_a05/magp_251101/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+main_graph*SBconv1.weightj
+locationmodel.onnx.dataj
+offset400j
+length480p*rB
+conv1.biasJ`xOæ2òïækêÛΩ@π“æI5≠æ°{Hæ4æ¶⁄‘æXjZ>SåPæ¨ÕŒ>¸_=™oˇæ[A∑>ø¡æ}ùûæSåæ®:)ø71≈<%°Ä=∏’Ç>˙Ëªæ(†>≥Äiæ*V$Bconv2.weightj
+locationmodel.onnx.dataj
+offset2880j
+length17280p*£$B
+conv2.biasJêóÑﬂºÔFΩ±”ëΩWó=f_>ºr•<'7∫=Ωæ<J:ƒºÊ´ﬂºÆ9Ω∞AΩIVrΩpæ˚§+Ω‹∂Ωÿ≠˛94!æƒÒ©=Vàˆ=Œ,;Ωçá=#Îß=ÅïZæT&Qæˆ‡®=
+{Ú<ΩK˜æ∑(∫=ÿ~>ß\—ΩùÇŒºôÍôæ.G°Ω¿çÓ=*W0$Bconv3.weightj
+locationmodel.onnx.dataj
+offset40160j
+length34560p*”0B
+conv3.biasJ¿P`ﬂ=í =ò[ı<Û˛a=Íà]Ωöı•<±ø∂æà^ãæL¨üΩ¶IPΩ¢™=—ì	<ù∑óº1†%Ω
+yNæîë°Ω•˘=“È!>§?ºQ˛=N<´=26L<hb6Ω##ˇ;ºÓ¶æûﬂ<M@Ω©—kΩÂﬂrΩ«˚æPëTΩ°nÈ=˝<T3êæÅà(=[L æ]C—ª
+º>/”9<ê-_∫–!}=”í ;jèvæ_ø’=ÖÇΩ∂[À=”O˛=é˘¯<*W@0Bconv4.weightj
+locationmodel.onnx.dataj
+offset74720j
+length36864p*ì@B
+conv4.biasJÄ;zæç„>(√=»∏>tS>ö>æ(≤$ºé√˝=–µ’=“>Pßä<xΩ÷=ú“≈ΩπdOΩ&s™º+~øΩÓ_X<aK‰Ω?◊ï=©∏û=å…_ºùCÑ=∫π¢Ω‡⁄ë=ı¿Ωˆuˆæª√=e6=^F⁄=:ù=S>"P≈=îl>pÆ=#¡›=ÉYæ≥À>Æ˘ºA°∑=å˛ΩÚ°è=ÍÛÇ=éN=rõœΩßÍ>≠UΩå“{=«Ù=]í>øÏ}=[Üºa7©=œ ]=]>	=©Râ=»Ωÿ=¶D5æøèÜΩkñº6y6æ÷ƒ>ƒã=úÖ>*X@@Bconv5.weightj
+locationmodel.onnx.dataj
+offset111584j
+length49152p*ì@B
+conv5.biasJÄNà7ΩI/‡=¶ò‘=E=>§>Zaù=?	M=û:c=l4&=A∑=l¸ºéaΩÂÃó=Xµ*ºoﬁi=èÒ>Á'%=á—∫yk%>°»<öˆ=|_=≤ç=¿—≤ΩÈùÁ=≠P?ºÇ´Ê=S˙?>äL>ﬂ‰>ﬁ`=6Ω)î=Ì-F=ï˘p<ŸF=öyﬁ<Ÿ$œ=ˇ\ò=ŸB}=ÿ¢ºç™è<v4 = oè<˘åßΩüÈÇΩÄá>‹
+>Ò·ß=QÄ>∫≤øºFéΩWV§Ω+¨=[{Ù=?∞∑=¿)>·NÚ=Æ°¥<O∞3ºH˚ª“ﬁ	æÔÌ”=[¶Ω*WdÄDB
+fc1.weightj
+locationmodel.onnx.dataj
+offset196608j
+length3481600p*IdBfc1.biasj
+locationmodel.onnx.dataj
+offset0j
+length400p*S2dB
+fc2.weightj
+locationmodel.onnx.dataj
+offset20160j
+length20000p*Ÿ2Bfc2.biasJ»2É˚=K=‹=@%∑<∞=Ãúêæey™>™3ûΩ»>Q<Ñı„ΩQ~ã=÷˚G>ÌQïªÇø-Ω¨¡=¸ Ω£º}ŸiΩTï™<–æÂ›˜=—ûΩùçK=¡ÊîΩÉT?>ÿ^æ≠ﬂªΩ·◊í>÷+·<D,ª){ΩΩ‘™ªÊÚ<¡KæÂ…ïΩ]%˜>∏H@>ˇ&∂<î+E>ª"è>!∫P=.>ô˜5æfnßæΩ >∂õ7æ/îuæÒ _=≈®ºk·7ºJû<*P
+2B
+fc3.weightj
+locationmodel.onnx.dataj
+offset880j
+length2000p*8
+Bfc3.biasJ(ÔIÈºÂä>-øSæ~FO>à◊<FvdΩÓ¨<ïˇ*æ”xÓΩì'æ*d
+B
+fc4.weightJP≈8Ëºˇ/ˆ<Êç0>PI≥<öòöæ^È>drÀº™PÄΩ`aæ∆ÕB>ë®3=◊p°=´l≠Ω"¶=æÇ†ß=:GÔ=3â£>&˝oΩÖ7œΩSAΩ*Bfc4.biasJÙ∑ºz≤¶º*Bval_0J       *Bval_4J        "      Zí
+x
+	
+
+π"=
+/pkg.torch.export.graph_signature.InputSpec.kind
+USER_INPUT"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNoneb[
+linear_3
+
+
+"?
+0pkg.torch.export.graph_signature.OutputSpec.kindUSER_OUTPUTj‘
+conv1.weight
+
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"3
+!pkg.torch.onnx.original_node_namep_conv1_weightj»
+
+conv1.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_conv1_biasj‘
+conv2.weight
+
+$
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"3
+!pkg.torch.onnx.original_node_namep_conv2_weightj»
+
+conv2.bias
+
+
+$"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_conv2_biasj‘
+conv3.weight
+
+0
+$
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"3
+!pkg.torch.onnx.original_node_namep_conv3_weightj»
+
+conv3.bias
+
+
+0"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_conv3_biasj‘
+conv4.weight
+
+@
+0
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"3
+!pkg.torch.onnx.original_node_namep_conv4_weightj»
+
+conv4.bias
+
+
+@"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_conv4_biasj‘
+conv5.weight
+
+@
+@
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"3
+!pkg.torch.onnx.original_node_namep_conv5_weightj»
+
+conv5.bias
+
+
+@"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_conv5_biasjÕ
+
+fc1.weight
+	
+d
+ÄD"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_fc1_weightjƒ
+fc1.bias
+
+
+d"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"/
+!pkg.torch.onnx.original_node_name
+p_fc1_biasjÃ
+
+fc2.weight
+
+2
+d"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_fc2_weightjƒ
+fc2.bias
+
+
+2"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"/
+!pkg.torch.onnx.original_node_name
+p_fc2_biasjÃ
+
+fc3.weight
+
+
+
+2"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_fc3_weightjƒ
+fc3.bias
+
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"/
+!pkg.torch.onnx.original_node_name
+p_fc3_biasjÃ
+
+fc4.weight
+
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"1
+!pkg.torch.onnx.original_node_namep_fc4_weightjƒ
+fc4.bias
+
+
+"<
+/pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
+5pkg.torch.export.graph_signature.InputSpec.persistentNone"/
+!pkg.torch.onnx.original_node_name
+p_fc4_biasj
+val_0
+
+
+jO
+val_4
+
+
+":
+$pkg.onnxscript.optimizer.folded_from['val_2', 'val_3']j 
+	unsqueeze
+
+
+
+πj
+conv1d
+
+
+
+ùj
+relu
+
+
+
+ùj
+conv1d_1
+
+
+$
+èj
+relu_1
+
+
+$
+èj
+conv1d_2
+
+
+0
+àj
+relu_2
+
+
+0
+àj
+conv1d_3
+
+
+@
+àj
+relu_3
+
+
+@
+àj
+conv1d_4
+
+
+@
+àj
+relu_4
+
+
+@
+àj
+view
+	
+
+ÄDj
+linear
+
+
+dj
+relu_5
+
+
+dj
+linear_1
+
+
+2j
+relu_6
+
+
+2j
+linear_2
+
+
+
+j
+relu_7
+
+
+
+Çä
+0pkg.torch.export.ExportedProgram.graph_signature’
+# inputs
+p_conv1_weight: PARAMETER target='conv1.weight'
+p_conv1_bias: PARAMETER target='conv1.bias'
+p_conv2_weight: PARAMETER target='conv2.weight'
+p_conv2_bias: PARAMETER target='conv2.bias'
+p_conv3_weight: PARAMETER target='conv3.weight'
+p_conv3_bias: PARAMETER target='conv3.bias'
+p_conv4_weight: PARAMETER target='conv4.weight'
+p_conv4_bias: PARAMETER target='conv4.bias'
+p_conv5_weight: PARAMETER target='conv5.weight'
+p_conv5_bias: PARAMETER target='conv5.bias'
+p_fc1_weight: PARAMETER target='fc1.weight'
+p_fc1_bias: PARAMETER target='fc1.bias'
+p_fc2_weight: PARAMETER target='fc2.weight'
+p_fc2_bias: PARAMETER target='fc2.bias'
+p_fc3_weight: PARAMETER target='fc3.weight'
+p_fc3_bias: PARAMETER target='fc3.bias'
+p_fc4_weight: PARAMETER target='fc4.weight'
+p_fc4_bias: PARAMETER target='fc4.bias'
+x: USER_INPUT
+
+# outputs
+linear_3: USER_OUTPUT
+Ç8
+2pkg.torch.export.ExportedProgram.range_constraints{}B
+ 
